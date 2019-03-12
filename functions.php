@@ -1,6 +1,6 @@
 <?php 
 
-
+add_theme_support('post-thumbnails');
 function posx()
 {
    /*    $p = get_role('editor');
@@ -13,6 +13,7 @@ function posx()
             'add_new_item'=>'kjqfkjns'
         ),
         'public'=>true,
+        'supports'=>['title','editor','thumbnail'],
         
        'capability_type' =>['aa','aas'],
         'add_meta_cap'=>true,
@@ -45,6 +46,7 @@ add_action('admin_init','psp_add_role_caps',999);
               $role->add_cap( 'create_aa' );
               $role->add_cap( 'read_private_aas' );
               $role->add_cap( 'delete_private_posts' );
+              $role->add_cap('upload_files');
               if($the_role == "administrator")
               {
                     $role->add_cap( 'read_aas' );
